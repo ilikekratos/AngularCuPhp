@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Lab5</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="../actions/browsescript.js"></script>
+</head>
+<body>
+    <div class="container mt-10">
+        <div class="row">
+          <input class="btn btn-primary btn-block" type="button" (click) = "onLoad('title')" value="Order by title">
+          <input class="btn btn-primary btn-block" type="button" (click) = "onLoad('author')" value="Order by author">
+
+          <table id="example" class="display" >
+            <thead>
+                  <tr>
+
+                      <th>Author</th>
+                      <th>Title</th>
+                      <th>Comment</th>
+                      <th>Date</th>
+                  </tr>
+              </thead>
+              <tbody>
+          <tr *ngFor="let book of pageOfItems">
+
+            <td>{{book.author}}</td>
+            <td>{{book.title}}</td>
+            <td>{{book.comment}}</td>
+            <td>{{book.date}}</td>
+          </tr>
+          <div class="card-footer pb-0 pt-3">
+          <jw-pagination [items]="list" [pageSize]="4" (changePage)="onChangePage($event)"></jw-pagination>
+        </div>
+          </tbody>
+                </table>
+            <a href="javascript:history.back()" type="button" class="btn btn-secondary mt-5 float-end">Back</a>
+        </div>
+
+  </div>
+</body>
+</html>

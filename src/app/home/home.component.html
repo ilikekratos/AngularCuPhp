@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Registration Page</title>
+  </head>
+  <body>
+    <div class="centerDiv">
+    <div id="login-buttons" style="width: 15vw;">
+    <h3>Login as:</h3>
+
+		<button type="button" class="btn btn-primary btn-block" (click)="onSend('guest')" style="width: 15vw;">User</button>
+		<button type="button" class="btn btn-primary btn-block" (click)="onSend('admin')" style="width: 15vw;">Admin</button>
+  </div>
+
+
+              {{response == 'you are guest' ? navigateToGuest() : ''}}
+              {{response == 'you are admin' ? navigateToAdmin() : ''}}
+            </div>
+  </body>
+</html>
